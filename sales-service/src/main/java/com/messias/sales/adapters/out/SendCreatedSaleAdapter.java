@@ -1,4 +1,4 @@
-package com.messias.sales.adapters;
+package com.messias.sales.adapters.out;
 
 import com.messias.sales.adapters.out.message.SaleMessage;
 import com.messias.sales.application.core.domain.Sale;

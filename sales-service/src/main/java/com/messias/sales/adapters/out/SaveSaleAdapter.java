@@ -1,4 +1,4 @@
-package com.messias.sales.adapters;
+package com.messias.sales.adapters.out;
 
 import com.messias.sales.adapters.out.repository.SaleRepository;
 import com.messias.sales.adapters.out.repository.entity.SaleEntity;
