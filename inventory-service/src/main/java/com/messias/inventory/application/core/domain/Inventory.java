@@ -42,6 +42,10 @@ public class Inventory {
         this.quantity -= quantity;
     }
 
+    public void creditQuantity(Integer quantity){
+        this.quantity += quantity;
+    }
+
     @Override
     public String toString() {
         return "Inventory{" +

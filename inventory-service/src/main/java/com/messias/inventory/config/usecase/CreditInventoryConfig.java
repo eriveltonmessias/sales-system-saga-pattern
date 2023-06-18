@@ -2,20 +2,21 @@ package com.messias.inventory.config.usecase;
 
 import com.messias.inventory.adapters.out.SendToKafkaAdapter;
 import com.messias.inventory.adapters.out.UpdateInventoryAdapter;
-import com.messias.inventory.application.core.usecase.DebitInventoryUseCase;
+import com.messias.inventory.application.core.usecase.CreditInventoryUseCase;
 import com.messias.inventory.application.core.usecase.FindInventoryByProductIdUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class DebitInventoryConfig {
+public class CreditInventoryConfig {
+
 
     @Bean
-    public DebitInventoryUseCase debitInventoryUseCase(
+    public CreditInventoryUseCase creditInventoryUseCase(
             FindInventoryByProductIdUseCase findInventoryByProductIdUseCase,
             UpdateInventoryAdapter updateInventoryAdapter,
             SendToKafkaAdapter sendToKafkaAdapter
     ){
-        return new DebitInventoryUseCase(findInventoryByProductIdUseCase, updateInventoryAdapter, sendToKafkaAdapter);
+        return new CreditInventoryUseCase(findInventoryByProductIdUseCase, updateInventoryAdapter, sendToKafkaAdapter);
     }
 }
