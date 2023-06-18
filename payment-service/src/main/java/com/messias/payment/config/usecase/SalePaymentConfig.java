@@ -1,7 +1,7 @@
 package com.messias.payment.config.usecase;
 
 import com.messias.payment.adapters.out.SavePaymentAdapter;
-import com.messias.payment.adapters.out.SendValidatedPaymentAdapter;
+import com.messias.payment.adapters.out.SendToKafkaAdapter;
 import com.messias.payment.adapters.out.UpdateUserAdapter;
 import com.messias.payment.application.core.usecase.FindUserByIdUseCase;
 import com.messias.payment.application.core.usecase.SalePaymentUseCase;
@@ -15,9 +15,9 @@ public class SalePaymentConfig {
     public SalePaymentUseCase salePaymentUseCase(FindUserByIdUseCase findUserByIdUseCase,
                                                  UpdateUserAdapter updateUserAdapter,
                                                  SavePaymentAdapter savePaymentAdapter,
-                                                 SendValidatedPaymentAdapter sendValidatedPaymentAdapter){
+                                                 SendToKafkaAdapter sendToKafkaAdapter){
 
-        return  new SalePaymentUseCase(findUserByIdUseCase, updateUserAdapter, savePaymentAdapter, sendValidatedPaymentAdapter);
+        return  new SalePaymentUseCase(findUserByIdUseCase, updateUserAdapter, savePaymentAdapter, sendToKafkaAdapter);
 
     }
 }
