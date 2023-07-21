@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SaleMessage {
     private Sale sale;
-    private SaleEvent event;
+    private SaleEvent saleEvent;
 }

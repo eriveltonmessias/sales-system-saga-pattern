@@ -3,10 +3,10 @@ package com.messias.sales.adapters.in.controller;
 import com.messias.sales.adapters.in.controller.mapper.SaleRequestMapper;
 import com.messias.sales.adapters.in.controller.request.SaleRequest;
 import com.messias.sales.application.ports.in.CreateSaleInputPort;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -21,11 +21,12 @@ public class SaleController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createSale(@Validated @RequestBody SaleRequest saleRequest){
+    public void createSale(@Valid @RequestBody SaleRequest saleRequest){
 
         log.info("Criando a venda");
 
         this.createSaleInputPort.create(saleRequestMapper.toSale(saleRequest));
         log.info("Venda criada com sucesso");
     }
+
 }

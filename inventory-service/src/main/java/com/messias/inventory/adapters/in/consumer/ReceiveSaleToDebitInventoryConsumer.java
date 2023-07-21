@@ -18,7 +18,7 @@ public class ReceiveSaleToDebitInventoryConsumer {
 
     @KafkaListener(topics = "tp-saga-sale", groupId = "inventory-debit")
     public void receive(SaleMessage saleMessage){
-        if(SaleEvent.CREATED_SALE.equals(saleMessage.getEvent())){
+        if(SaleEvent.CREATED_SALE.equals(saleMessage.getSaleEvent())){
         log.info("Inicio da separação de mercadoria.");
         debitInventoryInputPort.debit(saleMessage.getSale());
         log.info("Inicio da separação de mercadoria.");

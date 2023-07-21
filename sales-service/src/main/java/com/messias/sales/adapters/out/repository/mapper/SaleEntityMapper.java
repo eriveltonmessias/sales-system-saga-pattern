@@ -10,7 +10,7 @@ import org.mapstruct.Named;
 @Mapper(componentModel = "spring")
 public interface SaleEntityMapper {
 
-    @Mapping(source = "status", target = "statusId", qualifiedByName = "setStatusId")
+    @Mapping(source = "status", target = "status", qualifiedByName = "setStatusId")
     SaleEntity toSaleEntity(Sale sale);
 
     @Named("setStatusId")
@@ -18,7 +18,7 @@ public interface SaleEntityMapper {
         return saleStatus.getStatusId();
     }
 
-    @Mapping(source="statusId", target = "status", qualifiedByName = "setStatus")
+    @Mapping(source="status", target = "status", qualifiedByName = "setStatus")
     Sale ToSale(SaleEntity saleEntity);
 
     @Named("setStatus")
